@@ -2,26 +2,27 @@
 // It describes the shape of the data, and what data type each property should accept.
 // For simplicity of teaching, we're manually defining these types.
 // However, these types are generated automatically if you're using an ORM such as Prisma.
-export type ProviderData = {
-  title: string;
-  desctiption: string;
-  fields: 'Civil' | 'Criminal' | 'Consumer';
-  speciality: string;
-}
-
-export type User = {
+export type Consumer = {
   id: string;
   name: string;
   email: string;
   password: string;
-  isProvider: boolean,
-  providerData: ProviderData
+};
+export type Provider = {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  title: string;
+  desctiption: string;
+  speciality: string;
 };
 
 export type Requests = {
+  requestId: string;
   consumerId: string;
   providerId: string;
-  requestDescription: string;
+  description: string;
 };
 
 export type Invoice = {
